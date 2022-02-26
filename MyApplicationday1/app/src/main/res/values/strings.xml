@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application day1</string>
+    <string name="name">Name</string>
+    <string name="phoneNum">Phone</string>
+    <string name="email">Email</string>
+    <string name="age">Age</string>
+    <string name="add">Add</string>
+    <string name="clear">Clear</string>
+</resources>
