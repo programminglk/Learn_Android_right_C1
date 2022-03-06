@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Day4_SpinnerExample</string>
+
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Pink</item>
+    </string-array>
+
+    <string-array name="foods">
+        <item>Koththu</item>
+        <item>Rice</item>
+        <item>Burger</item>
+        <item>Submarine</item>
+        <item>Milk Rice</item>
+    </string-array>
+
+
+</resources>
