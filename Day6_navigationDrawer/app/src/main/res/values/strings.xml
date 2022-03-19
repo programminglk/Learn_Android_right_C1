@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Day6_navigationDrawer</string>
+    <string name="open">Open_drawer</string>
+    <string name="close">Close_drawer</string>
+</resources>
