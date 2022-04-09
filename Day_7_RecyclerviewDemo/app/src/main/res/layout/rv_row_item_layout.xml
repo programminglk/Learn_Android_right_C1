@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dr_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_baseline_person_24"/>
+
+
+        <TextView
+            android:id="@+id/dr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/dr_img"
+            android:paddingLeft="10dp"
+            android:text="line1"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dr_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="line2"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/dr_name"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/dr_img"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
