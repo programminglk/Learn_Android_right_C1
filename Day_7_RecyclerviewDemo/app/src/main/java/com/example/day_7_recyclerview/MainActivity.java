@@ -45,6 +45,17 @@ public class MainActivity extends AppCompatActivity {
         rv_doctors.setLayoutManager(layoutManager);
         rv_doctors.setAdapter(adapter);
 
+        adapter.setOnDoctorItemClickListner(new DoctorsAdpter.OnDoctorClickListner() {
+            @Override
+            public void onDoctorItemClick(int position) {
+                Doctor selectedDoctor = doctorsList.get(position);
+                String name = selectedDoctor.getName();
+                String email = selectedDoctor.getEmail();
+
+                Toast.makeText(MainActivity.this, "Name :"+ name + " Email:"+email , Toast.LENGTH_SHORT).show();
+            }
+        });
+
         initView();
 
     }

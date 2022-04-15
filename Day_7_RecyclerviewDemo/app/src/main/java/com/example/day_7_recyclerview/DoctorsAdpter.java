@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class DoctorsAdpter extends RecyclerView.Adapter<DoctorsAdpter.DoctorViewHolder> {
 
     private ArrayList<Doctor> drList = new ArrayList<>();
-
+    private  OnDoctorClickListner doctorClickListner;
     public  DoctorsAdpter(ArrayList<Doctor> drList){
         this.drList = drList;
     }
@@ -26,7 +26,7 @@ public class DoctorsAdpter extends RecyclerView.Adapter<DoctorsAdpter.DoctorView
     public DoctorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflator = LayoutInflater.from(parent.getContext());
         View v =inflator.inflate(R.layout.rv_row_item_layout, parent, false);
-        DoctorViewHolder dvh = new DoctorViewHolder(v);
+        DoctorViewHolder dvh = new DoctorViewHolder(v, doctorClickListner );
 
         return dvh;
     }
@@ -48,11 +48,34 @@ public class DoctorsAdpter extends RecyclerView.Adapter<DoctorsAdpter.DoctorView
         TextView tv_name;
         TextView tv_email;
 
-        public DoctorViewHolder(@NonNull View itemView) {
+        public DoctorViewHolder(@NonNull View itemView, OnDoctorClickListner listner ) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.dr_name);
             tv_email = itemView.findViewById(R.id.dr_email);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listner != null){
+                        int position =  getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listner.onDoctorItemClick(position);
+                        }
+                    }
+                }
+            });
+
+
+
         }
+    }
+
+    public interface OnDoctorClickListner{
+        void onDoctorItemClick(int position);
+    }
+
+    public void setOnDoctorItemClickListner(OnDoctorClickListner listner){
+        doctorClickListner = listner;
     }
 
 }
