@@ -3,6 +3,7 @@ package com.example.day_7_recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,11 +48,13 @@ public class DoctorsAdpter extends RecyclerView.Adapter<DoctorsAdpter.DoctorView
     public static class DoctorViewHolder extends RecyclerView.ViewHolder{
         TextView tv_name;
         TextView tv_email;
+        ImageView sendEmail; //**2
 
         public DoctorViewHolder(@NonNull View itemView, OnDoctorClickListner listner ) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.dr_name);
             tv_email = itemView.findViewById(R.id.dr_email);
+            sendEmail = itemView.findViewById(R.id.btn_sendemail); //**3
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,12 +69,26 @@ public class DoctorsAdpter extends RecyclerView.Adapter<DoctorsAdpter.DoctorView
             });
 
 
+            sendEmail.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listner != null){
+                        int position =  getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listner.onSendEmailClick(position);   //**5
+                        }
+                    }
+               }
+          });
+
+
 
         }
     }
 
     public interface OnDoctorClickListner{
         void onDoctorItemClick(int position);
+        void onSendEmailClick(int position); // **4
     }
 
     public void setOnDoctorItemClickListner(OnDoctorClickListner listner){
