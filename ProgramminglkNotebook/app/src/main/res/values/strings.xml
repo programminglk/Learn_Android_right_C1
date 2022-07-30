@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Programming.lk Note book</string>
+    <string name="note_book_from_programming_lk">Note Book From Programming.lk</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign up</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Pasword</string>
+    <string name="signup_here">Sign up here</string>
+    <string name="confirm_password">Confirm\n Password</string>
+    <string name="signup_login">Signup and Login</string>
+</resources>
